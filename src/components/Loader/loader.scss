@@ -1,0 +1,9 @@
+$primary-color: #21209c;
+@import "loaders.css/src/animations/cube-transition.scss";
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+}
