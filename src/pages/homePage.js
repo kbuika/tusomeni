@@ -35,9 +35,8 @@ const Error = styled.p`
 
 function HomePage() {
   const [data, setData] = useState([]);
-  const [url, setUrl] = useState(
-    "https://cors-anywhere.herokuapp.com/https://tusome-app.herokuapp.com/api/v1/papers/getAllPapers"
-  );
+  const url =
+    "https://cors-anywhere.herokuapp.com/https://tusome-app.herokuapp.com/api/v1/papers/getAllPapers";
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
