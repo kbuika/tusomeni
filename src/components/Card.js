@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../resources/ThemeColors";
+import { Link } from "react-router-dom";
 
 const CardContainer = styled.div`
   height: 17em;
@@ -70,18 +71,24 @@ const PaperType = styled.p`
 
 function Card({ paper }) {
   return (
-    <CardContainer key={paper.id}>
-      <ImageContainer>
-        <PaperImage src={paper.imageUrl}></PaperImage>
-      </ImageContainer>
-      <PaperTypeDiv>
-        <PaperType>{paper.paperCategory}</PaperType>
-      </PaperTypeDiv>
-      <TextContainer>
-        <PaperName>{paper.title}</PaperName>
-        <PaperYear>{paper.year}</PaperYear>
-      </TextContainer>
-    </CardContainer>
+    <Link
+      to={`/single-paper/${paper.id}?name=${paper.title}`}
+      key={paper.id}
+      style={{ textDecoration: "none", color: "black" }}
+    >
+      <CardContainer>
+        <ImageContainer>
+          <PaperImage src={paper.imageUrl}></PaperImage>
+        </ImageContainer>
+        <PaperTypeDiv>
+          <PaperType>{paper.paperCategory}</PaperType>
+        </PaperTypeDiv>
+        <TextContainer>
+          <PaperName>{paper.title}</PaperName>
+          <PaperYear>{paper.year}</PaperYear>
+        </TextContainer>
+      </CardContainer>
+    </Link>
   );
 }
 

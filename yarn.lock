@@ -9080,6 +9080,11 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
+react-awesome-lightbox@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/react-awesome-lightbox/-/react-awesome-lightbox-1.7.3.tgz#ee1c00fd4197e0e65bf996aa219eac4d8b6db5a0"
+  integrity sha512-mSxdL3KGzuh2eR8I00nv9njiolmMoXITuCvfd71DBXK13JW3e+Z/sCMENS9+dngBJU8/m7dR1Ix0W6afS5cFsA==
+
 react-dev-utils@^11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-11.0.1.tgz#30106c2055acfd6b047d2dc478a85c356e66fe45"

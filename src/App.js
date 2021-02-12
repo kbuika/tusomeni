@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/homePage";
 import AboutPage from "./pages/aboutPage";
+import PaperDetails from "./pages/paperDetails";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/about-tusomeni" component={AboutPage} />
+        <Route path="/single-paper/:id?name=:name" component={PaperDetails} />
       </Switch>
       <Footer />
     </Router>

@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { Component } from "react";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Loaders from "../components/Loader/Loader";
 import { colors } from "../resources/ThemeColors";
 
 const MainDiv = styled.div`
-  height: auto;
+  height: 80vh;
   width: auto;
   margin: 0;
 `;
@@ -33,50 +32,46 @@ const Error = styled.p`
   color: ${colors.blue};
 `;
 
-function HomePage() {
-  const [data, setData] = useState([]);
-  const url =
-    "https://cors-anywhere.herokuapp.com/https://tusome-app.herokuapp.com/api/v1/papers/getAllPapers";
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+class HomePage extends Component {
+  state = {
+    isError: false,
+    isLoading: false,
+    data: [],
+  };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const result = await axios(url);
-        setData(result.data);
-        console.table("The data", result.data);
-      } catch (error) {
-        setIsError(true);
-        setIsLoading(false);
-      }
-      setIsLoading(false);
-    };
-    fetchData();
-  }, [url]);
-  return (
-    <MainDiv>
-      {isError && (
-        <DisplayContainer>
-          <Error>Something went wrong... try agin later</Error>
-        </DisplayContainer>
-      )}
-      {isLoading && (
-        <DisplayContainer>
-          <Loaders />
-          <Error>Morio, punguza sup..</Error>
-        </DisplayContainer>
-      )}
-      <CardsContainer>
-        {data.map((paper) => (
-          <Card paper={paper} />
-        ))}
-      </CardsContainer>
-    </MainDiv>
-  );
+  componentDidMount() {
+    this.setState({ isLoading: true });
+    fetch("https://tusome-app.herokuapp.com/api/v1/papers/getAllPapers")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ data: data });
+        this.setState({ isLoading: false });
+      })
+      .catch((error) => this.setState({ isError: true, isLoading: false }));
+  }
+
+  render() {
+    return (
+      <MainDiv>
+        {this.state.isError && (
+          <DisplayContainer>
+            <Error>Something went wrong... try agin later</Error>
+          </DisplayContainer>
+        )}
+        {this.state.isLoading && (
+          <DisplayContainer>
+            <Loaders />
+            <Error>Morio, punguza sup..</Error>
+          </DisplayContainer>
+        )}
+        <CardsContainer>
+          {this.state.data.map((paper) => (
+            <Card paper={paper} />
+          ))}
+        </CardsContainer>
+      </MainDiv>
+    );
+  }
 }
 
 export default HomePage;
-
-// https://tusome-app.herokuapp.com/api/v1/papers/getAllPapers
