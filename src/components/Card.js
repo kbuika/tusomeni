@@ -72,11 +72,11 @@ const PaperType = styled.p`
 function Card({ paper }) {
   return (
     <Link
-      to={`/single-paper/${paper.id}?name=${paper.title}`}
+      to={`/single-paper/${paper.id}?title=${paper.title}`}
       key={paper.id}
       style={{ textDecoration: "none", color: "black" }}
     >
-      <CardContainer>
+      <CardContainer key={paper.id}>
         <ImageContainer>
           <PaperImage src={paper.imageUrl}></PaperImage>
         </ImageContainer>

@@ -14,7 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/about-tusomeni" component={AboutPage} />
-        <Route path="/single-paper/:id?name=:name" component={PaperDetails} />
+        <Route path="/single-paper/:id" component={PaperDetails} />
       </Switch>
       <Footer />
     </Router>
