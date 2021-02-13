@@ -55,7 +55,7 @@ const PaperTypeDiv = styled.div`
   height: 1.5em;
   width: 3em;
   margin-right: 0.4em;
-  margin-top: 0.1em;
+  margin-top: 0.2em;
   border-radius: 10px;
   background-color: ${colors.blue};
   display: flex;
@@ -78,7 +78,7 @@ function Card({ paper }) {
     >
       <CardContainer key={paper.id}>
         <ImageContainer>
-          <PaperImage src={paper.imageUrl}></PaperImage>
+          <PaperImage src={paper.imageUrls[0].url}></PaperImage>
         </ImageContainer>
         <PaperTypeDiv>
           <PaperType>{paper.paperCategory}</PaperType>

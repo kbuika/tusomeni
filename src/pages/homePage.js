@@ -5,7 +5,7 @@ import Loaders from "../components/Loader/Loader";
 import { colors } from "../resources/ThemeColors";
 
 const MainDiv = styled.div`
-  height: 80vh;
+  height: auto;
   width: auto;
   margin: 0;
 `;
@@ -16,6 +16,7 @@ const CardsContainer = styled.div`
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: center;
+  height: auto;
 `;
 
 const DisplayContainer = styled.div`
@@ -24,6 +25,7 @@ const DisplayContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 2em 3em 3em 2em;
 `;
 
 const Error = styled.p`

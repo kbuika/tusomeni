@@ -9,6 +9,8 @@ const MainDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  width: 100%;
 `;
 
 const CopyRight = styled.p`
