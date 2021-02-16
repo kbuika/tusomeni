@@ -11,6 +11,7 @@ const MainDiv = styled.div`
   justify-content: center;
   position: fixed;
   width: 100%;
+  margin-top: 2em;
 `;
 
 const CopyRight = styled.p`
