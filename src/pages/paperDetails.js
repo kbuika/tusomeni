@@ -7,6 +7,7 @@ import "react-awesome-lightbox/build/style.css";
 import { withRouter } from "react-router-dom";
 // import queryString from "query-string";
 import { colors } from "../resources/ThemeColors";
+import { Redirect } from "react-router";
 
 const MainDiv = styled.div`
   height: 80vh;
@@ -43,6 +44,7 @@ class paperDetails extends Component {
     isError: false,
     isLoading: false,
     data: null,
+    navigate: false,
   };
 
   componentDidMount() {
@@ -82,10 +84,11 @@ class paperDetails extends Component {
     console.log("The data", this.state.data);
   }
 
-  handleClose() {
-    this.props.history.push("/");
-  }
   render() {
+    const { navigate } = this.state;
+    if (navigate) {
+      return <Redirect to="/" push={true} />;
+    }
     return (
       <MainDiv>
         {this.state.isError && (
@@ -100,7 +103,11 @@ class paperDetails extends Component {
           </DisplayContainer>
         )}
         <DisplayContainer>
-          <Lightbox images={images} startIndex={1} />
+          <Lightbox
+            images={images}
+            startIndex={1}
+            onClose={() => this.setState({ navigate: true })}
+          />
         </DisplayContainer>
       </MainDiv>
     );
