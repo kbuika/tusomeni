@@ -75,13 +75,7 @@ class paperDetails extends Component {
       obj["url"] = element.url;
       images.push(obj);
     });
-    console.log("the images", images);
-
-    // json[imageUrls].forEach(function (element) {
-    //   element.title = `${json[title]}`;
-    // });
     this.setState({ data: newData });
-    console.log("The data", this.state.data);
   }
 
   render() {
