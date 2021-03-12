@@ -70,6 +70,7 @@ class HomePage extends Component {
           {this.state.data.map((paper) => (
             <Card paper={paper} />
           ))}
+          <a href="/single-paper-pdf">View pdf</a>
         </CardsContainer>
       </MainDiv>
     );

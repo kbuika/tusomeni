@@ -31,10 +31,10 @@ const Error = styled.p`
 `;
 
 let images = [
-  {
-    url: "https://tusome-app.herokuapp.com/api/v1/images/getImage/61",
-    title: "Test Image",
-  },
+  // {
+  //   url: "https://tusome-app.herokuapp.com/api/v1/images/getImage/61",
+  //   title: "Test Image",
+  // },
 ];
 
 // let images = [];
