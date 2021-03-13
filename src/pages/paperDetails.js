@@ -31,13 +31,17 @@ const Error = styled.p`
 `;
 
 let images = [
-  // {
-  //   url: "https://tusome-app.herokuapp.com/api/v1/images/getImage/61",
-  //   title: "Test Image",
-  // },
+  {
+    url: "http://tukenya.ac.ke/sites/all/themes/venture_theme/images/logo.png",
+    title: "TUK",
+  },
 ];
-
-// let images = [];
+var newData = [
+  {
+    url: "http://tukenya.ac.ke/sites/all/themes/venture_theme/images/logo.png",
+    title: "TUK",
+  },
+];
 
 class paperDetails extends Component {
   state = {
@@ -45,9 +49,25 @@ class paperDetails extends Component {
     isLoading: false,
     data: null,
     navigate: false,
+    displayImages: [
+      {
+        url:
+          "http://tukenya.ac.ke/sites/all/themes/venture_theme/images/logo.png",
+        title: "TUK",
+      },
+    ],
   };
 
   componentDidMount() {
+    this.setState({
+      displayImages: [
+        {
+          url:
+            "http://tukenya.ac.ke/sites/all/themes/venture_theme/images/logo.png",
+          title: "TUK",
+        },
+      ],
+    });
     this.setState({ isLoading: true });
     const { id } = this.props.match.params;
     this.fetchData(id);
@@ -60,8 +80,7 @@ class paperDetails extends Component {
       `https://tusome-app.herokuapp.com/api/v1/papers/getPaper/${id}`
     );
     const json = await response.json();
-    console.log(json);
-    let newData = json.imageUrls.map((obj) => ({
+    newData = json.imageUrls.map((obj) => ({
       ...obj,
       title: json.title + i++,
     }));
@@ -76,6 +95,7 @@ class paperDetails extends Component {
       images.push(obj);
     });
     this.setState({ data: newData });
+    this.setState({ displayImages: images });
   }
 
   render() {
@@ -98,9 +118,14 @@ class paperDetails extends Component {
         )}
         <DisplayContainer>
           <Lightbox
-            images={images}
+            images={newData}
             startIndex={1}
-            onClose={() => this.setState({ navigate: true })}
+            onClose={() =>
+              this.setState({
+                navigate: true,
+                displayImages: [],
+              })
+            }
           />
         </DisplayContainer>
       </MainDiv>

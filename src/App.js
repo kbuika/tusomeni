@@ -6,20 +6,20 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/homePage";
 import AboutPage from "./pages/aboutPage";
 import PaperDetails from "./pages/paperDetails";
-import PDFDetails from "./pages/PDFDetails";
+// import PDFDetails from "./pages/PDFDetails";
 import renderIf from "render-if";
 
 function App() {
   return (
     <Router>
-      {renderIf(window.location.pathname !== "/single-paper-pdf")(<Header />)}
+      {renderIf(window.location.pathname !== "/single-paper")(<Header />)}
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/about-tusomeni" component={AboutPage} />
         <Route path="/single-paper/:id" component={PaperDetails} />
-        <Route path="/single-paper-pdf" component={PDFDetails} />
+        {/* <Route path="/single-paper-pdf" component={PDFDetails} /> */}
       </Switch>
-      {renderIf(window.location.pathname !== "/single-paper-pdf")(<Footer />)}
+      {renderIf(window.location.pathname !== "/single-paper")(<Footer />)}
     </Router>
   );
 }
