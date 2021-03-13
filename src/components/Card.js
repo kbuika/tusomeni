@@ -39,7 +39,7 @@ const PaperName = styled.h3`
   font-size: 1em;
   font-style: normal;
   font-weight: 500;
-  margin-top: -0.2em;
+  margin-top: -0.1em;
 `;
 
 const PaperYear = styled.p`

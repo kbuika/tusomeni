@@ -46,6 +46,7 @@ class HomePage extends Component {
     fetch("https://tusome-app.herokuapp.com/api/v1/papers/getAllPapers")
       .then((res) => res.json())
       .then((data) => {
+        console.log("the data", data);
         this.setState({ data: data });
         this.setState({ isLoading: false });
       })
