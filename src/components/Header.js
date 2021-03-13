@@ -5,6 +5,7 @@ import { colors } from "../resources/ThemeColors";
 
 const HeaderContainer = styled.div`
   height: auto;
+  width: 100vw;
   overflow: hidden;
   background-color: ${colors.blue};
   padding-left: 2em;
@@ -15,6 +16,9 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   padding-top: 1.5em;
   padding-bottom: 0.5em;
+  top: 0;
+  position: fixed;
+  z-index: 1;
 
   @media (max-width: ${breakpoints.mobileMin}) {
     padding-right: 1em;
@@ -56,7 +60,7 @@ const NavLinksDiv = styled.div`
   flex-flow: row nowrap;
   align-items: space-evenly;
   justify-content: center;
-  margin-left: 5%;
+  margin-right: 5%;
 `;
 
 const NavLink = styled.a`

@@ -40,12 +40,14 @@ const PaperName = styled.h3`
   font-style: normal;
   font-weight: 500;
   margin-top: -0.1em;
+  color: ${colors.blue};
 `;
 
 const PaperYear = styled.p`
   font-size: 0.9em;
-  font-weight: 350;
+  font-weight: 550;
   margin-top: -0.3em;
+  color: ${colors.blue};
 `;
 
 const PaperTypeDiv = styled.div`
@@ -53,14 +55,16 @@ const PaperTypeDiv = styled.div`
   top: 0;
   right: 0;
   height: 1.5em;
-  width: 3em;
+  width: auto;
   margin-right: 0.4em;
   margin-top: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   border-radius: 10px;
   background-color: ${colors.blue};
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const PaperType = styled.p`
@@ -78,7 +82,11 @@ function Card({ paper }) {
     >
       <CardContainer key={paper.id}>
         <ImageContainer>
-          <PaperImage src={paper.imageUrls[0].url}></PaperImage>
+          <PaperImage
+            src={paper.imageUrls[0].url}
+            loading="lazy"
+            alt={paper.title}
+          ></PaperImage>
         </ImageContainer>
         <PaperTypeDiv>
           <PaperType>{paper.paperCategory}</PaperType>

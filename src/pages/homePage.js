@@ -8,6 +8,7 @@ const MainDiv = styled.div`
   height: auto;
   width: auto;
   margin: 0;
+  z-index: -1;
 `;
 
 const CardsContainer = styled.div`
@@ -34,6 +35,19 @@ const Error = styled.p`
   color: ${colors.blue};
 `;
 
+const NotifyDiv = styled.div`
+  height: auto;
+  width: 100%;
+  margin-top: 3.5em;
+  background-color: yellow;
+  z-index: 1;
+  text-align: center;
+  padding-top: 0.2em;
+  padding-bottom: 0.3em;
+  color: ${colors.blue};
+  font-weight: 400;
+`;
+
 class HomePage extends Component {
   state = {
     isError: false,
@@ -55,6 +69,10 @@ class HomePage extends Component {
   render() {
     return (
       <MainDiv>
+        <NotifyDiv>
+          Hey there &#128075;, Did not find what you were looking for? Keep
+          calm, the team is still adding some papers.
+        </NotifyDiv>
         {this.state.isError && (
           <DisplayContainer>
             <Error>Something went wrong... try agin later</Error>
