@@ -10,7 +10,7 @@ import PaperDetails from "./pages/paperDetails";
 import renderIf from "render-if";
 
 import ReactGA from "react-ga";
-ReactGA.initialize("265507721");
+ReactGA.initialize("UA-149879025-1");
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
