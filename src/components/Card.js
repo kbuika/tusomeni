@@ -50,24 +50,30 @@ const PaperYear = styled.p`
   color: ${colors.blue};
 `;
 
-const PaperTypeDiv = styled.div`
+const TopDiv = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  height: 1.5em;
-  width: auto;
   margin-right: 0.4em;
   margin-top: 0.2em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  border-radius: 10px;
-  background-color: ${colors.blue};
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-const PaperType = styled.p`
+const TypeDiv = styled.div`
+  height: 1.5em;
+  width: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 10px;
+  margin-right: ${(props) => (props.space ? "0.3em" : "0")};
+  background-color: ${colors.blue};
+  display: flex;
+  align-items: center;
+`;
+
+const Type = styled.p`
   font-size: 0.7em;
   font-weight: 600;
   color: ${colors.light};
@@ -88,9 +94,14 @@ function Card({ paper }) {
             alt={paper.title}
           ></PaperImage>
         </ImageContainer>
-        <PaperTypeDiv>
-          <PaperType>{paper.paperCategory}</PaperType>
-        </PaperTypeDiv>
+        <TopDiv>
+          <TypeDiv space>
+            <Type>{paper.yearOfStudy}</Type>
+          </TypeDiv>
+          <TypeDiv>
+            <Type>{paper.courseType}</Type>
+          </TypeDiv>
+        </TopDiv>
         <TextContainer>
           <PaperName>{paper.title}</PaperName>
           <PaperYear>{paper.year}</PaperYear>
