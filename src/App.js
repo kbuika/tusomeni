@@ -9,6 +9,10 @@ import PaperDetails from "./pages/paperDetails";
 // import PDFDetails from "./pages/PDFDetails";
 import renderIf from "render-if";
 
+import ReactGA from "react-ga";
+ReactGA.initialize("265507721");
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 function App() {
   return (
     <Router>
