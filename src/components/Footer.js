@@ -43,7 +43,7 @@ function Footer() {
     <MainDiv>
       <IssuesDiv>
         <IssueText>
-          Got an issue, comment, recommendation, wish to collaborate or want to
+          Got an issue, comment, recommendation, wish to join the team or want to
           say 'hi'? Send us your message{" "}
           <a
             href="https://bit.ly/3bLmuRi"
@@ -55,14 +55,7 @@ function Footer() {
           </a>
         </IssueText>
       </IssuesDiv>
-    <CopyRight>Built with &#10084; by Marjorie Muloma, Willy Ng'ang'a, Steve Kibuika and others. Wish to join the team? Fill this form <a
-            href="https://bit.ly/3bLmuRi"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "white" }}
-          >
-            here
-          </a></CopyRight>
+    <CopyRight>Built with &#10084; by Marjorie Muloma, Willy Ng'ang'a, Steve Kibuika and others.</CopyRight>
     </MainDiv>
   );
 }
