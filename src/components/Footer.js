@@ -55,7 +55,6 @@ function Footer() {
           </a>
         </IssueText>
       </IssuesDiv>
-//       <CopyRight>&copy; Tusomeni. {new Date().getFullYear()}</CopyRight>
     <CopyRight>Built with &#10084; by Marjorie Muloma, Willy Ng'ang'a, Steve Kibuika and others. Wish to join the team? Fill this form <a
             href="https://bit.ly/3bLmuRi"
             target="_blank"
