@@ -6,6 +6,8 @@ const MainDiv = styled.div`
   height: 75vh;
   background-color: ${colors.light};
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding: 1.5em;
 `;
