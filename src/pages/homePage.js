@@ -70,8 +70,8 @@ class HomePage extends Component {
     return (
       <MainDiv>
         <NotifyDiv>
-          Hey there &#128075;, Did not find what you were looking for? Keep
-          calm, the team is still adding some papers.
+          Hey there &#128075;, Don't worry, we are working on a search function
+          help you find papers easily.
         </NotifyDiv>
         {this.state.isError && (
           <DisplayContainer>
