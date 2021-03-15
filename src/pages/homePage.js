@@ -70,8 +70,7 @@ class HomePage extends Component {
     return (
       <MainDiv>
         <NotifyDiv>
-          Hey there &#128075;, Don't worry, we are working on a search function
-          help you find papers easily.
+           &#128293; NEW UPLOAD &#128293;  Computer Aided Design, Engineering Drawing Papers.
         </NotifyDiv>
         {this.state.isError && (
           <DisplayContainer>
@@ -95,3 +94,5 @@ class HomePage extends Component {
 }
 
 export default HomePage;
+// Hey there &#128075;, Don't worry, we are working on a search function
+//           help you find papers easily.
