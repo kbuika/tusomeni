@@ -43,8 +43,8 @@ function Footer() {
     <MainDiv>
       <IssuesDiv>
         <IssueText>
-          Got an issue, comment, recommendation, wish to join the team or want to
-          say 'hi'? Send us your message{" "}
+          Got an issue, comment, recommendation, wish to join the team or want
+          to say 'hi'? Send us your message{" "}
           <a
             href="https://bit.ly/3bLmuRi"
             target="_blank"
@@ -55,9 +55,15 @@ function Footer() {
           </a>
         </IssueText>
       </IssuesDiv>
-    <CopyRight>Built with &#10084; by Marjorie Muloma, Willy Ng'ang'a, Steve Kibuika and others.</CopyRight>
+      <CopyRight>
+        &copy; Tusomeni. {new Date().getFullYear()}. All Rights Reserved.
+      </CopyRight>
     </MainDiv>
   );
 }
 
 export default Footer;
+
+{
+  /* <CopyRight>Built with &#10084; by Marjorie Muloma, Willy Ng'ang'a, Steve Kibuika and others.</CopyRight> */
+}
