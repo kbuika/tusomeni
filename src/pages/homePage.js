@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Card from "../components/Card";
+import Filter from "../components/FilterComponent/Filter";
 import Loaders from "../components/Loader/Loader";
 import { colors } from "../resources/ThemeColors";
+import { breakpoints } from "../Media";
 
 const MainDiv = styled.div`
   height: auto;
@@ -10,10 +12,22 @@ const MainDiv = styled.div`
   margin: 0;
   z-index: -1;
   background-color: ${colors.darkish};
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+`;
+
+const FilterComponent = styled.div`
+  margin-top: 2em;
+  width: 40vw;
+  @media (max-width: ${breakpoints.mobileMin}) {
+    width: 60vw;
+  }
 `;
 
 const CardsContainer = styled.div`
-  margin: 2em 3em 0em 2em;
+  margin: 1.5em 3em 0em 2em;
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -54,6 +68,7 @@ class HomePage extends Component {
     isError: false,
     isLoading: false,
     data: [],
+    searchData: [],
   };
 
   componentDidMount() {
@@ -67,13 +82,21 @@ class HomePage extends Component {
       .catch((error) => this.setState({ isError: true, isLoading: false }));
   }
 
+  onHandleSearch = (selectedOption) => {
+    const { data } = this.state;
+    var newArray = data.filter(function (el) {
+      return el.yearOfStudy === selectedOption.value;
+    });
+    this.setState({ searchData: newArray });
+  };
+
   render() {
     return (
       <MainDiv>
-        <NotifyDiv>
-          Hey there &#128075;, Don't worry, we are working on a search function
-          help you find papers easily.
-        </NotifyDiv>
+        <NotifyDiv>&#127882; Success in your exams..</NotifyDiv>
+        <FilterComponent>
+          <Filter onSearch={this.onHandleSearch} />
+        </FilterComponent>
         {this.state.isError && (
           <DisplayContainer>
             <Error>Something went wrong... try agin later</Error>
@@ -85,11 +108,20 @@ class HomePage extends Component {
             <Error>Morio, punguza sup..</Error>
           </DisplayContainer>
         )}
-        <CardsContainer>
-          {this.state.data.map((paper) => (
-            <Card paper={paper} />
-          ))}
-        </CardsContainer>
+        {this.state.searchData.length !== 0 && (
+          <CardsContainer>
+            {this.state.searchData.map((paper) => (
+              <Card paper={paper} />
+            ))}
+          </CardsContainer>
+        )}
+        {this.state.searchData.length === 0 && (
+          <CardsContainer>
+            {this.state.data.map((paper) => (
+              <Card paper={paper} />
+            ))}
+          </CardsContainer>
+        )}
       </MainDiv>
     );
   }
