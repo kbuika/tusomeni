@@ -63,7 +63,7 @@ var options = [
 export default function AnimatedMulti({ onSearch }) {
   return (
     <Select
-      closeMenuOnSelect={false}
+      closeMenuOnSelect={true}
       components={animatedComponents}
       defaultValue={options[0]}
       label="select year of study"
