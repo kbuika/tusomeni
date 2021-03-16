@@ -68,7 +68,7 @@ const TypeDiv = styled.div`
   padding-right: 0.5em;
   border-radius: 10px;
   margin-right: ${(props) => (props.space ? "0.3em" : "0")};
-  background-color: ${colors.blue};
+  background-color: ${colors.darkish};
   display: flex;
   align-items: center;
 `;

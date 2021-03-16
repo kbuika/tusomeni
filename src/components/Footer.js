@@ -11,7 +11,7 @@ const MainDiv = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 2em;
+  padding-top: 2em;
 `;
 
 const IssuesDiv = styled.div`

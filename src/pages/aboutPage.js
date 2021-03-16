@@ -4,7 +4,7 @@ import { colors } from "../resources/ThemeColors";
 
 const MainDiv = styled.div`
   height: 75vh;
-  background-color: ${colors.light};
+  background-color: ${colors.darkish};
   display: flex;
   align-items: center;
   justify-content: center;
