@@ -7,7 +7,7 @@ const HeaderContainer = styled.div`
   height: auto;
   width: 100vw;
   overflow: hidden;
-  background-color: ${colors.blue};
+  background-color: ${colors.darkish};
   padding-left: 2em;
   padding-right: 0em;
   display: flex;

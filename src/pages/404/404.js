@@ -15,7 +15,7 @@ const MainComponent = styled.div`
 const Title = styled.h1`
   font-size: 8em;
   font-weight: 900;
-  color: ${colors.blue};
+  color: ${colors.darkish};
   @media (max-width: ${breakpoints.mobileMin}) {
     font-size: 5em;
   }
@@ -25,7 +25,7 @@ const Tagline = styled.p`
   margin-top: -2em;
   font-size: 1.4em;
   font-weight: 400;
-  color: ${colors.blue};
+  color: ${colors.darkish};
 `;
 
 const Button = styled.button`
@@ -33,7 +33,7 @@ const Button = styled.button`
   width: 10em;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  background-color: ${colors.blue};
+  background-color: ${colors.darkish};
   color: white;
   border: none;
   border-radius: 4px;

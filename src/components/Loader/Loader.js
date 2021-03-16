@@ -5,7 +5,7 @@ function Loaders() {
   return (
     <Loader
       type="Puff"
-      color="#21209c"
+      color="white"
       height={100}
       width={100}
       timeout={300000}

@@ -9,10 +9,11 @@ const MainDiv = styled.div`
   width: auto;
   margin: 0;
   z-index: -1;
+  background-color: ${colors.darkish};
 `;
 
 const CardsContainer = styled.div`
-  margin: 2em 3em 3em 2em;
+  margin: 2em 3em 0em 2em;
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -44,7 +45,7 @@ const NotifyDiv = styled.div`
   text-align: center;
   padding-top: 0.2em;
   padding-bottom: 0.3em;
-  color: ${colors.blue};
+  color: ${colors.darkish};
   font-weight: 400;
 `;
 
