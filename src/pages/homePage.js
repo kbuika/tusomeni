@@ -128,3 +128,5 @@ class HomePage extends Component {
 }
 
 export default HomePage;
+// Hey there &#128075;, Don't worry, we are working on a search function
+//           help you find papers easily.
