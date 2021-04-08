@@ -93,7 +93,7 @@ class HomePage extends Component {
   render() {
     return (
       <MainDiv>
-        <NotifyDiv>&#127882; Success in your exams..</NotifyDiv>
+        <NotifyDiv>If you find the questions to be hard, remember that 5 years from now, it won't matter..</NotifyDiv>
         <FilterComponent>
           <Filter onSearch={this.onHandleSearch} />
         </FilterComponent>
