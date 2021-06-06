@@ -53,7 +53,7 @@ import makeAnimated from "react-select/animated";
 const animatedComponents = makeAnimated();
 
 var options = [
-  { value: null, label: "Select year of study" },
+  { value: null, label: "Show All" },
   { value: "FIRST", label: "First year" },
   { value: "SECOND", label: "Second year" },
   { value: "THIRD", label: "Third year" },
