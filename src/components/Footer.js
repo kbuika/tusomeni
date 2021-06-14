@@ -50,7 +50,7 @@ function Footer() {
         </IssueText>
       </IssuesDiv>
       <CopyRight>
-        &copy; Tusomeni. {new Date().getFullYear()}. All Rights Reserved.
+        &copy; Tusomeni. {new Date().getFullYear()}. All Rights Reserved. email: codematata@gmail.com
       </CopyRight>
       <CopyRight>
         Built with &#10084; by Marjorie Muloma, Willy Ng'ang'a, Steve Kibuika
