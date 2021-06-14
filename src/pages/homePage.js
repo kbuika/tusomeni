@@ -130,8 +130,8 @@ const NotifyDiv = styled.div`
   background-color: yellow;
   z-index: 0;
   text-align: center;
-  padding-top: 0.2em;
-  padding-bottom: 0.3em;
+  padding-top: 20px;
+  padding-bottom: 20px;
   color: ${colors.darkish};
   font-weight: 400;
   font-size: 0.9em;
