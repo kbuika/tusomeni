@@ -29,6 +29,7 @@ const IssueText = styled.h3`
   font-weight: 600;
   padding-left: 0.5em;
   padding-right: 0.5em;
+  text-align: center;
 `;
 
 const CopyRight = styled.p`
@@ -36,6 +37,7 @@ const CopyRight = styled.p`
   font-weight: 700;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  text-align: center;
 `;
 
 function Footer() {

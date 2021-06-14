@@ -37,9 +37,7 @@ class HomePage extends Component {
   render() {
     return (
       <MainDiv>
-        <NotifyDiv>
-          &#127882; <strong>Success in your exams.. You got this.</strong>
-        </NotifyDiv>
+        <NotifyDiv>&#127882; Success in your exams.. You got this.</NotifyDiv>
         <CarouselDiv>
           <CarouselComponent />
         </CarouselDiv>
@@ -127,7 +125,7 @@ const NotifyDiv = styled.div`
   width: 100%;
   margin-top: 3.5em;
   background-color: yellow;
-  z-index: 1;
+  z-index: 0;
   text-align: center;
   padding-top: 0.2em;
   padding-bottom: 0.3em;
@@ -139,4 +137,7 @@ const CarouselDiv = styled.div`
   width: 90vw;
   height: 20vh;
   margin: 3em;
+  @media (max-width: ${breakpoints.mobileMin}) {
+    height: 30vh;
+  }
 `;
