@@ -12,11 +12,10 @@ class CarouselComponent extends Component {
         infiniteLoop
         showIndicators={false}
         showStatus={false}
+        autoPlay
+        showArrows={false}
       >
         <SlideDiv key="slide1">
-          <h3>&#x1F60E; &#x1F60E; Term 2 papers now available!!</h3>
-        </SlideDiv>
-        <SlideDiv key="slide2">
           <h3>
             <em>
               Wishing you all the good luck in your exam. Ace it and crush the
@@ -27,7 +26,7 @@ class CarouselComponent extends Component {
             <strong>~ Marjorie Muloma</strong>
           </p>
         </SlideDiv>
-        <SlideDiv key="slide3">
+        <SlideDiv key="slide2">
           <h3>
             <em>
               The Technical University of Kenya is big enough to accommodate all
@@ -40,6 +39,9 @@ class CarouselComponent extends Component {
               ~ Mr. Africa Odhiambo Gura (INCOMING SATUK PRESIDENT)
             </strong>
           </p>
+        </SlideDiv>
+        <SlideDiv key="slide3">
+          <h3>&#x1F60E; &#x1F60E; Term 2 papers now available!!</h3>
         </SlideDiv>
       </Carousel>
     );
@@ -58,7 +60,7 @@ const SlideDiv = styled.div`
   justify-content: center;
 
   @media (max-width: ${breakpoints.mobileMin}) {
-    height: 240;
+    height: 200;
     > h3 {
       font-size: 1em;
       line-height: 1.1;
