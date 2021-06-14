@@ -28,7 +28,13 @@ function AboutPage() {
         and Information Technology classes at The Technical University of Kenya.{" "}
       </Description>
       <Description>
-        More stuff is coming soon to a browser near you.&#128640; &#128640;
+        We are working on some exciting products for aspiring Software Engineers
+        and Designers.&#128640; &#128640;
+        <br />
+        <br />
+        <br />
+        For software consulting services or collaborations, email us at
+        codematata@gmail.com
       </Description>
     </MainDiv>
   );
