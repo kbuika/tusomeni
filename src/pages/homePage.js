@@ -6,6 +6,7 @@ import Loaders from "../components/Loader/Loader";
 import { colors } from "../resources/ThemeColors";
 import { breakpoints } from "../Media";
 import CarouselComponent from "../components/Carousel/Carousel";
+// import { Helmet } from "react-helmet";
 
 class HomePage extends Component {
   state = {
@@ -37,7 +38,9 @@ class HomePage extends Component {
   render() {
     return (
       <MainDiv>
-        <NotifyDiv>&#127882; Success in your exams.. You got this.</NotifyDiv>
+        <NotifyDiv>
+          &#127882; Term 2 papers now available.. You got this.
+        </NotifyDiv>
         <CarouselDiv>
           <CarouselComponent />
         </CarouselDiv>
@@ -131,6 +134,7 @@ const NotifyDiv = styled.div`
   padding-bottom: 0.3em;
   color: ${colors.darkish};
   font-weight: 400;
+  font-size: 0.9em;
 `;
 
 const CarouselDiv = styled.div`
@@ -138,7 +142,8 @@ const CarouselDiv = styled.div`
   height: 20vh;
   margin: 3em;
   @media (max-width: ${breakpoints.mobileMin}) {
-    height: 30vh;
+    height: 25vh;
+    margin: 2em;
   }
 `;
 
