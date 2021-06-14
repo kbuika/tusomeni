@@ -43,27 +43,19 @@ function Footer() {
     <MainDiv>
       <IssuesDiv>
         <IssueText>
-          Got an issue, comment, recommendation, wish to join the team or want
-          to say 'hi'? Send us your message{" "}
-          <a
-            href="https://bit.ly/3bLmuRi"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "white" }}
-          >
-            here
-          </a>
+          You can now chat with us. For emotional support or free therapy, click
+          the green chat widget.
         </IssueText>
       </IssuesDiv>
       <CopyRight>
         &copy; Tusomeni. {new Date().getFullYear()}. All Rights Reserved.
+      </CopyRight>
+      <CopyRight>
+        Built with &#10084; by Marjorie Muloma, Willy Ng'ang'a, Steve Kibuika
+        and others.
       </CopyRight>
     </MainDiv>
   );
 }
 
 export default Footer;
-
-{
-  /* <CopyRight>Built with &#10084; by Marjorie Muloma, Willy Ng'ang'a, Steve Kibuika and others.</CopyRight> */
-}

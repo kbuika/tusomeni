@@ -15,6 +15,7 @@
     "react-ga": "^3.3.0",
     "react-loader-spinner": "^3.1.14",
     "react-pdf": "^5.2.0",
+    "react-responsive-carousel": "^3.2.18",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-select": "^4.2.1",
@@ -45,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.6"
   }
 }
