@@ -8,6 +8,7 @@ import { withRouter } from "react-router-dom";
 // import queryString from "query-string";
 import { colors } from "../resources/ThemeColors";
 import { Redirect } from "react-router";
+import { Helmet } from "react-helmet";
 
 const MainDiv = styled.div`
   height: 80vh;
@@ -51,19 +52,18 @@ class paperDetails extends Component {
     navigate: false,
     displayImages: [
       {
-        url:
-          "http://tukenya.ac.ke/sites/all/themes/venture_theme/images/logo.png",
+        url: "http://tukenya.ac.ke/sites/all/themes/venture_theme/images/logo.png",
         title: "TUK",
       },
     ],
+    rawData: {},
   };
 
   componentDidMount() {
     this.setState({
       displayImages: [
         {
-          url:
-            "http://tukenya.ac.ke/sites/all/themes/venture_theme/images/logo.png",
+          url: "http://tukenya.ac.ke/sites/all/themes/venture_theme/images/logo.png",
           title: "TUK",
         },
       ],
@@ -80,15 +80,16 @@ class paperDetails extends Component {
       `https://tusome-app.herokuapp.com/api/v1/papers/getPaper/${id}`
     );
     const json = await response.json();
+    this.setState({ rawData: json });
     newData = json.imageUrls.map((obj) => ({
       ...obj,
       title: json.title + i++,
     }));
-    let Data = newData.forEach(function (element) {
+    let Data = newData.forEach((element) => {
       delete element.id;
     });
     console.log(Data);
-    newData.forEach(function (element) {
+    newData.forEach((element) => {
       var obj = {};
       obj["title"] = element.title;
       obj["url"] = element.url;
@@ -96,15 +97,26 @@ class paperDetails extends Component {
     });
     this.setState({ data: newData });
     this.setState({ displayImages: images });
+    console.log("new data", this.state.rawData);
   }
 
   render() {
-    const { navigate } = this.state;
+    const { navigate, rawData } = this.state;
     if (navigate) {
       return <Redirect to="/" push={true} />;
     }
     return (
       <MainDiv>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>
+            {`${rawData.year}`} {`${rawData.title}`} exam.
+          </title>
+          <meta
+            name="description"
+            content={`${rawData.year} ${rawData.title} exam for ${rawData.yearOfStudy} year ${rawData.courseType} students.`}
+          />
+        </Helmet>
         {this.state.isError && (
           <DisplayContainer>
             <Error>Something went wrong... try agin later</Error>

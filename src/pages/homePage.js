@@ -6,7 +6,7 @@ import Loaders from "../components/Loader/Loader";
 import { colors } from "../resources/ThemeColors";
 import { breakpoints } from "../Media";
 import CarouselComponent from "../components/Carousel/Carousel";
-// import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet";
 
 class HomePage extends Component {
   state = {
@@ -38,6 +38,14 @@ class HomePage extends Component {
   render() {
     return (
       <MainDiv>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Tusomeni | A past-papers platform.</title>
+          <meta
+            name="description"
+            content="Tusomeni is a past-paper platform for Computing students at The Technical University of Kenya. We aggregate papers from previous exams and let students use them for revision."
+          />
+        </Helmet>
         <NotifyDiv>
           &#127882; Term 2 papers now available.. You got this.
         </NotifyDiv>
