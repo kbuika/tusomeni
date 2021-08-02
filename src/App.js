@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/homePage";
 import AboutPage from "./pages/aboutPage";
 import PaperDetails from "./pages/paperDetails";
+import Twenty from "./pages/2020";
+
 // import PDFDetails from "./pages/PDFDetails";
 import Error from "./pages/404/404";
 import renderIf from "render-if";
@@ -25,6 +27,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/about-tusomeni" component={AboutPage} />
         <Route path="/single-paper/:id" component={PaperDetails} />
+        <Route path="/2020-papers" component={Twenty} />
         <Route path="*" component={Error} />
         {/* <Route path="/single-paper-pdf" component={PDFDetails} /> */}
       </Switch>

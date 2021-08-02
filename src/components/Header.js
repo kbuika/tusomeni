@@ -71,6 +71,7 @@ const NavLink = styled.a`
   color: ${colors.light};
   margin-right: 1em;
   margin-left: 1em;
+  border-bottom: 1px solid white;
 `;
 
 function Header() {
@@ -81,7 +82,7 @@ function Header() {
       </LogoDiv>
       <NavLinksDiv>
         {/* <NavLink href="/">Home</NavLink> */}
-        <NavLink href="/about-tusomeni">About</NavLink>
+        <NavLink href="/2020-papers">Where are 2020 papers?</NavLink>
       </NavLinksDiv>
     </HeaderContainer>
   );
