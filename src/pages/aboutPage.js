@@ -27,7 +27,7 @@ function AboutPage() {
         Tusomeni is an online past-paper repository for the School of Computing
         and Information Technology classes at The Technical University of Kenya.{" "}
       </Description>
-      <Description>
+      {/* <Description>
         We are working on some exciting products for aspiring Software Engineers
         and Designers.&#128640; &#128640;
         <br />
@@ -35,7 +35,7 @@ function AboutPage() {
         <br />
         For software consulting services or collaborations, email us at
         codematata@gmail.com
-      </Description>
+      </Description> */}
     </MainDiv>
   );
 }
