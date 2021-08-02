@@ -21,7 +21,7 @@ class HomePage extends Component {
     fetch("https://tusome-app.herokuapp.com/api/v1/papers/getAllPapers")
       .then((res) => res.json())
       .then((data) => {
-        this.setState({ data: data });
+        this.setState({ data });
         this.setState({ isLoading: false });
       })
       .catch((error) => this.setState({ isError: true, isLoading: false }));
@@ -46,9 +46,7 @@ class HomePage extends Component {
             content="Tusomeni is a past-paper platform for Computing students at The Technical University of Kenya. We aggregate papers from previous exams and let students use them for revision."
           />
         </Helmet>
-        <NotifyDiv>
-          &#127882; Term 2 papers now available.. You got this.
-        </NotifyDiv>
+        <NotifyDiv>&#127882; Recent Uploads!! Semester 2 Papers.</NotifyDiv>
         <CarouselDiv>
           <CarouselComponent />
         </CarouselDiv>
@@ -135,14 +133,14 @@ const NotifyDiv = styled.div`
   height: auto;
   width: 100%;
   margin-top: 3.5em;
-  background-color: yellow;
+  background-color: #6665ba;
   z-index: 0;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: ${colors.darkish};
+  color: white;
   font-weight: 400;
-  font-size: 0.9em;
+  font-size: 1em;
 `;
 
 const CarouselDiv = styled.div`
@@ -154,4 +152,3 @@ const CarouselDiv = styled.div`
     margin: 2em;
   }
 `;
-

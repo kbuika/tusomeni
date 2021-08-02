@@ -41,7 +41,7 @@ class CarouselComponent extends Component {
           </p>
         </SlideDiv>
         <SlideDiv key="slide3">
-          <h3>&#x1F60E; &#x1F60E; Term 2 papers now available!!</h3>
+          <h3>&#x1F60E; &#x1F60E; Semester 2 papers now available!!</h3>
         </SlideDiv>
       </Carousel>
     );
