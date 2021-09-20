@@ -82,7 +82,14 @@ function Header() {
       </LogoDiv>
       <NavLinksDiv>
         {/* <NavLink href="/">Home</NavLink> */}
-        <NavLink href="/2020-papers">Where are 2020 papers?</NavLink>
+        {/* <NavLink href="/2020-papers">Where are 2020 papers?</NavLink> */}
+        <NavLink
+          href="https://github.com/kibuikaCodes/tusomeni"
+          target="_blank"
+          rel="no referrer"
+        >
+          Source Code
+        </NavLink>
       </NavLinksDiv>
     </HeaderContainer>
   );
