@@ -7,12 +7,13 @@ import HomePage from "./pages/homePage";
 import AboutPage from "./pages/aboutPage";
 import PaperDetails from "./pages/paperDetails";
 import Twenty from "./pages/2020";
+import CollectPapers from "./pages/CollectPapers";
 
 // import PDFDetails from "./pages/PDFDetails";
 import Error from "./pages/404/404";
-import renderIf from "render-if";
 
 import ReactGA from "react-ga";
+import Landing from "./pages/Landing";
 var host = window.location.hostname;
 if (host !== "localhost") {
   ReactGA.initialize("UA-149879025-1");
@@ -22,16 +23,29 @@ if (host !== "localhost") {
 function App() {
   return (
     <Router>
-      {renderIf(window.location.pathname !== "/single-paper")(<Header />)}
+      {window.location.pathname !== "/single-paper" &&
+        window.location.pathname !== "/" && <Header />}
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={Landing} />
+        <Route path="/papers" component={HomePage} />
         <Route path="/about-tusomeni" component={AboutPage} />
         <Route path="/single-paper/:id" component={PaperDetails} />
         <Route path="/2020-papers" component={Twenty} />
+        <Route path="/submit-paper" component={CollectPapers} />
         <Route path="*" component={Error} />
-        {/* <Route path="/single-paper-pdf" component={PDFDetails} /> */}
       </Switch>
-      {renderIf(window.location.pathname !== "/single-paper")(<Footer />)}
+      <iframe
+        title="spotify"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4VkTBdvsYXu"
+        width="100%"
+        height="80"
+        frameBorder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+        class="spotify_float"
+      ></iframe>
+      {window.location.pathname !== "/single-paper" &&
+        window.location.pathname !== "/" && <Footer />}
     </Router>
   );
 }
