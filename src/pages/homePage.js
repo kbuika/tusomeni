@@ -110,7 +110,7 @@ const CardsContainer = styled.div`
   margin: 1.5em 3em 0em 2em;
   display: flex;
   flex-flow: row wrap;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   height: auto;
 `;
