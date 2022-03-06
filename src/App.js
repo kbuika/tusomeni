@@ -34,16 +34,6 @@ function App() {
         <Route path="/submit-paper" component={CollectPapers} />
         <Route path="*" component={Error} />
       </Switch>
-      <iframe
-        title="spotify"
-        src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4VkTBdvsYXu"
-        width="100%"
-        height="80"
-        frameBorder="0"
-        allowtransparency="true"
-        allow="encrypted-media"
-        class="spotify_float"
-      ></iframe>
       {window.location.pathname !== "/single-paper" &&
         window.location.pathname !== "/" && <Footer />}
     </Router>
