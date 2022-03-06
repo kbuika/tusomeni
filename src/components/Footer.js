@@ -43,12 +43,12 @@ const CopyRight = styled.p`
 function Footer() {
   return (
     <MainDiv>
-      <IssuesDiv>
+      {/* <IssuesDiv>
         <IssueText>
           You can now chat with us. For emotional support or free therapy, click
           the green chat widget.
         </IssueText>
-      </IssuesDiv>
+      </IssuesDiv> */}
       <CopyRight>
         &copy; Tusomeni. {new Date().getFullYear()}. All Rights Reserved. email: codematata@gmail.com
       </CopyRight>

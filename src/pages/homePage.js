@@ -22,6 +22,7 @@ class HomePage extends Component {
       .then((res) => res.json())
       .then((data) => {
         this.setState({ data });
+        console.table(data);
         this.setState({ isLoading: false });
       })
       .catch((error) => this.setState({ isError: true, isLoading: false }));
@@ -46,10 +47,10 @@ class HomePage extends Component {
             content="Tusomeni is a past-paper platform for Computing students at The Technical University of Kenya. We aggregate papers from previous exams and let students use them for revision."
           />
         </Helmet>
-        <NotifyDiv>&#127882; Recent Uploads!! Semester 2 Papers.</NotifyDiv>
-        <CarouselDiv>
+        <NotifyDiv>Do you know you can get up to <strong>KES 500</strong>&#x1F911; for sending us your past-papers? <a href="/submit-paper" style={{color: "white"}}>Alaa, show me how &#8594;</a></NotifyDiv>
+        {/* <CarouselDiv>
           <CarouselComponent />
-        </CarouselDiv>
+        </CarouselDiv> */}
         <FilterComponent>
           <Filter onSearch={this.onHandleSearch} />
         </FilterComponent>
@@ -61,20 +62,20 @@ class HomePage extends Component {
         {this.state.isLoading && (
           <DisplayContainer>
             <Loaders />
-            <Error>Morio, punguza sup..</Error>
+            <Error>Loading, Please wait...</Error>
           </DisplayContainer>
         )}
         {this.state.searchData.length !== 0 && (
           <CardsContainer>
             {this.state.searchData.map((paper) => (
-              <Card paper={paper} />
+              <Card paper={paper} key={paper.id} />
             ))}
           </CardsContainer>
         )}
         {this.state.searchData.length === 0 && (
           <CardsContainer>
             {this.state.data.map((paper) => (
-              <Card paper={paper} />
+              <Card paper={paper} key={paper.id}/>
             ))}
           </CardsContainer>
         )}

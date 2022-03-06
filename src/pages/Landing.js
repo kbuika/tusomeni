@@ -15,10 +15,10 @@ export default function Landing() {
       </RightDiv>
       <LeftDiv left>
         <div left>
-          <h2>Upload Papers</h2>
-          <p>Help others out by submitting papers you have</p>
+          <h2>Submit your papers</h2>
+          <p>Do you have papers you can submit to us in exchange for &#x1F911; &#x1F911;??</p>
           <a href="/submit-paper">
-            <button>Go &#8594;</button>
+            <button>Yes, show me the money &#8594;</button>
           </a>
         </div>
       </LeftDiv>
@@ -114,11 +114,12 @@ const LeftDiv = styled.div`
       text-decoration: none;
       > button {
         height: 2.6em;
-        width: 8em;
+        width: auto;
         border: none;
         border-radius: 5px;
         font-size: 0.8em;
         cursor: pointer;
+        padding:.5em;
 
         :hover {
           background-color: #53354a;

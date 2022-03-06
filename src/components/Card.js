@@ -4,13 +4,14 @@ import { colors } from "../resources/ThemeColors";
 import { Link } from "react-router-dom";
 
 const CardContainer = styled.div`
-  height: 17em;
   width: 14em;
   margin: 1.5em;
   border-radius: 12px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   transition: box-shadow 500ms;
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
   :hover {
     box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.3);
   }
@@ -33,6 +34,7 @@ const PaperImage = styled.img`
 const TextContainer = styled.div`
   margin-top: 0.2em;
   margin-left: 0.5em;
+  flex-grow: 1;
 `;
 
 const PaperName = styled.h3`
@@ -84,7 +86,7 @@ function Card({ paper }) {
     <Link
       to={`/single-paper/${paper.id}?title=${paper.title}`}
       key={paper.id}
-      style={{ textDecoration: "none", color: "black" }}
+      style={{ textDecoration: "none", color: "black", display: "flex" }}
     >
       <CardContainer key={paper.id}>
         <ImageContainer>
