@@ -88,7 +88,7 @@ const RightDiv = styled.div`
 `;
 
 const LeftDiv = styled.div`
-  background-color: #2b2e4a;
+  background-color: #464491;
   height: 100vh;
   width: 50%;
   margin: 0;

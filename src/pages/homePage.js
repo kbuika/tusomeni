@@ -134,7 +134,7 @@ const NotifyDiv = styled.div`
   height: auto;
   width: 100%;
   margin-top: 3.5em;
-  background-color: #6665ba;
+  background-color: #464491;
   z-index: 0;
   text-align: center;
   padding-top: 20px;
