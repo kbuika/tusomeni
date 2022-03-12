@@ -95,15 +95,13 @@ class paperDetails extends Component {
       obj["url"] = element.url;
       images.push(obj);
     });
-    this.setState({ data: newData });
-    this.setState({ displayImages: images });
-    console.log("new data", this.state.rawData);
+    this.setState({ data: newData, displayImages: images });
   }
 
   render() {
     const { navigate, rawData } = this.state;
     if (navigate) {
-      return <Redirect to="/" push={true} />;
+      return <Redirect to="/papers" push={true} />;
     }
     return (
       <MainDiv>
