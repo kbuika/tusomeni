@@ -14,6 +14,7 @@ class HomePage extends Component {
     isLoading: false,
     data: [],
     searchData: [],
+    searchText: null,
   };
 
   componentDidMount() {
@@ -22,21 +23,49 @@ class HomePage extends Component {
       .then((res) => res.json())
       .then((data) => {
         this.setState({ data });
-        console.table(data);
         this.setState({ isLoading: false });
       })
       .catch((error) => this.setState({ isError: true, isLoading: false }));
   }
 
-  onHandleSearch = (selectedOption) => {
-    const { data } = this.state;
-    var newArray = data.filter(function (el) {
-      return el.yearOfStudy === selectedOption.value;
+  onSearchTitle = (e) => {
+    if(e.target.value === null) {
+      return
+    }
+    const { data, searchText } = this.state;
+    this.setState({ isLoading: true });
+    let newData = []
+    let searchString = searchText?.toLowerCase().split(" ");
+    data.filter((item) => {
+      // let containsAtLeastOneWord = false;
+      // If at least a word is matched return it!
+      searchString.forEach((word) => {
+        if (item.title.toLowerCase().includes(word))
+        newData.push(item);
+      });
     });
-    this.setState({ searchData: newArray });
+    this.setState({ isLoading: false, data: [...new Set(newData)] });
+
   };
 
+  updateText = (e) => {
+    this.setState({ searchText: e.target.value });
+  }
+
+  clearSearch = () => {
+    this.setState({ searchText: null });
+    this.setState({ isLoading: true });
+    fetch("https://tusome-app.herokuapp.com/api/v1/papers/getAllPapers")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ data });
+        this.setState({ isLoading: false });
+      })
+      .catch((error) => this.setState({ isError: true, isLoading: false }));
+  }
+
   render() {
+    const { isError, isLoading, data, searchData } = this.state;
     return (
       <MainDiv>
         <Helmet>
@@ -47,36 +76,37 @@ class HomePage extends Component {
             content="Tusomeni is a past-paper platform for Computing students at The Technical University of Kenya. We aggregate papers from previous exams and let students use them for revision."
           />
         </Helmet>
-        <NotifyDiv>Do you know you can get up to <strong>KES 500</strong>&#x1F911; for sending us your past-papers? <a href="/submit-paper" style={{color: "white"}}>Alaa, show me how &#8594;</a></NotifyDiv>
-        {/* <CarouselDiv>
-          <CarouselComponent />
-        </CarouselDiv> */}
+        <NotifyDiv>
+          Do you know you can get up to <strong>KES 500</strong>&#x1F911; for
+          sending us your past-papers?{" "}
+          <a href="/submit-paper" style={{ color: "white" }}>
+            Alaa, show me how &#8594;
+          </a>
+        </NotifyDiv>
         <FilterComponent>
-          <Filter onSearch={this.onHandleSearch} />
+          <input onChange={this.updateText} placeholder="Search paper by name"></input><i onClick={this.clearSearch}>X</i><button onClick={this.onSearchTitle}>{isLoading ? 'Searching' : 'Search'}</button>
         </FilterComponent>
-        {this.state.isError && (
+        {isError && (
           <DisplayContainer>
             <Error>Something went wrong... try agin later</Error>
           </DisplayContainer>
         )}
-        {this.state.isLoading && (
+        {isLoading && (
           <DisplayContainer>
             <Loaders />
             <Error>Loading, Please wait...</Error>
           </DisplayContainer>
         )}
-        {this.state.searchData.length !== 0 && (
+        {(data?.length !== 0 && !isLoading) && (
           <CardsContainer>
-            {this.state.searchData.map((paper) => (
-              <Card paper={paper} key={paper.id} />
+            {data.map((paper) => (
+             <Card paper={paper} key={paper.id} />
             ))}
           </CardsContainer>
         )}
-        {this.state.searchData.length === 0 && (
+        {} {(data?.length === 0 && !isLoading) && (
           <CardsContainer>
-            {this.state.data.map((paper) => (
-              <Card paper={paper} key={paper.id}/>
-            ))}
+            <p>No results found</p>
           </CardsContainer>
         )}
       </MainDiv>
@@ -101,8 +131,45 @@ const MainDiv = styled.div`
 const FilterComponent = styled.div`
   margin-top: 2em;
   width: 40vw;
+
+  >input {
+    width: 70%;
+    height: 2em;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    padding-left: 1em;
+    :focus {
+      outline: none;
+    }
+    @media (max-width: ${breakpoints.mobileMin}) {
+      width: 50vw;
+    }
+  }
+  >i {
+    font-size: 1em;
+    background-color: white;
+    color: #464491;
+    border: none;
+    padding: .11em 1em .3em 0;
+    cursor: pointer;
+    @media (max-width: ${breakpoints.mobileMin}) {
+      padding: .11em .5em .3em 0;
+    }
+  }
+  >button {
+    height: 2.2em;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #464491;
+    color: white;
+    width: 20%;
+    cursor: pointer;
+    @media (max-width: ${breakpoints.mobileMin}) {
+      width: 30vw;
+    }
+  }
   @media (max-width: ${breakpoints.mobileMin}) {
-    width: 60vw;
+    width: 90vw;
   }
 `;
 
