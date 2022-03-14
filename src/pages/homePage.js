@@ -99,8 +99,8 @@ class HomePage extends Component {
         )}
         {(data?.length !== 0 && !isLoading) && (
           <CardsContainer>
-            {data.map((paper) => (
-             <Card paper={paper} key={paper.id} />
+            {data?.reverse().map((paper) => (
+             <Card paper={paper} key={paper?.id} />
             ))}
           </CardsContainer>
         )}
