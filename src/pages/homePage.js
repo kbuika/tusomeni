@@ -76,13 +76,13 @@ class HomePage extends Component {
             content="Tusomeni is a past-paper platform for Computing students at The Technical University of Kenya. We aggregate papers from previous exams and let students use them for revision."
           />
         </Helmet>
-        <NotifyDiv>
+        {/* <NotifyDiv>
           Do you know you can get up to <strong>KES 500</strong>&#x1F911; for
           sending us your past-papers?{" "}
           <a href="/submit-paper" style={{ color: "white" }}>
             Alaa, show me how &#8594;
           </a>
-        </NotifyDiv>
+        </NotifyDiv> */}
         <FilterComponent>
           <input onChange={this.updateText} placeholder="Search paper by name"></input><i onClick={this.clearSearch}>X</i><button onClick={this.onSearchTitle}>{isLoading ? 'Searching' : 'Search'}</button>
         </FilterComponent>
@@ -119,17 +119,18 @@ export default HomePage;
 const MainDiv = styled.div`
   height: auto;
   width: 100%;
-  margin: 0;
+  margin: 3.5em 0 0 0;
   z-index: -1;
   background-color: ${colors.darkish};
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  
 `;
 
 const FilterComponent = styled.div`
-  margin-top: 2em;
+  margin-top: 4em;
   width: 40vw;
 
   >input {
