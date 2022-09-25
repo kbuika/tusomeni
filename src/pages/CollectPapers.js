@@ -10,10 +10,10 @@ class CollectPapers extends Component {
           If you're in 1st year or 2nd year. Keep all the papers for the upcoming exams and immediately you have all of them, email me 
           so I can buy the papers from you.
         </p>
-        <p style={{width: '80%'}}>
+        <p>
           The papers will be bought on a bidding process. Whoever has the entire collection and the best bid wins!
         </p>
-        <p style={{width: '80%'}}>
+        <p>
           Looking forward to your emails.
         </p>
         <p>You in?</p>
