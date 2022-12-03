@@ -16,10 +16,10 @@ export default function Landing() {
       <LeftDiv left>
         <div left>
           <h2>Submit your papers</h2>
-          <p>For 1st years and 2nd years only. A sweet effortless deal for the first person to submit.</p>
+          {/* <p>For 1st years and 2nd years only. A sweet effortless deal for the first person to submit.</p>
           <a href="/submit-paper">
             <button>How?? &#8594;</button>
-          </a>
+          </a> */}
         </div>
       </LeftDiv>
     </MainDiv>
